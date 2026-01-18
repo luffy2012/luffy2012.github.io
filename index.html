@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私策略 - 操作记录、操作指南生成</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #0078d4;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #0078d4;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            color: #555;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .update-date {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>隐私策略</h1>
+        <p class="update-date">最后更新日期：2026年1月18日</p>
+
+        <h2>1. 引言</h2>
+        <p>欢迎使用"操作记录、操作指南生成"浏览器扩展（以下简称"本扩展"）。我们非常重视您的隐私权。本隐私策略旨在向您说明我们如何收集、使用、存储和保护您的个人信息。使用本扩展即表示您同意本隐私策略的条款。</p>
+
+        <h2>2. 我们收集的信息</h2>
+        <h3>2.1 本地存储的数据</h3>
+        <p>本扩展使用浏览器的本地存储（Chrome Storage API）来保存以下数据：</p>
+        <ul>
+            <li><strong>操作记录</strong>：包括鼠标点击、键盘输入（密码字段已自动脱敏）、页面切换等操作步骤</li>
+            <li><strong>用户设置</strong>：扩展的配置信息，包括 AI 接口地址、启用/禁用状态等</li>
+            <li><strong>认证令牌（Token）</strong>：用于与后端服务通信的身份验证信息</li>
+            <li><strong>流程数据</strong>：录制的操作流程和相关信息</li>
+        </ul>
+
+        <h3>2.2 截图数据</h3>
+        <p>当您使用截图功能时，本扩展会：</p>
+        <ul>
+            <li>捕获当前屏幕或选定区域的截图</li>
+            <li>将截图存储在本地（临时）</li>
+            <li>在您选择保存时，将截图上传到对象存储服务（OSS）</li>
+        </ul>
+
+        <h3>2.3 AI 分析数据（可选功能）</h3>
+        <div class="highlight">
+            <p><strong>重要说明：</strong>AI 分析功能默认关闭。只有您明确启用此功能后，才会涉及以下数据处理。</p>
+        </div>
+        <p>如果您启用了 AI 分析功能，本扩展可能会：</p>
+        <ul>
+            <li>将截图发送到您配置的 AI 服务接口进行分析</li>
+            <li>接收 AI 服务返回的分析结果（操作描述、页面路径等）</li>
+            <li>AI 服务的具体数据处理方式取决于您使用的服务提供商</li>
+        </ul>
+
+        <h3>2.4 音频数据（可选功能）</h3>
+        <p>如果您使用语音识别功能，本扩展会：</p>
+        <ul>
+            <li>请求麦克风权限</li>
+            <li>捕获您的语音输入</li>
+            <li>将语音数据发送到语音识别服务进行转文字处理</li>
+        </ul>
+
+        <h2>3. 信息的使用方式</h2>
+        <p>我们收集的信息仅用于以下目的：</p>
+        <ul>
+            <li><strong>提供核心功能</strong>：记录和回放您的操作步骤</li>
+            <li><strong>生成操作指南</strong>：基于您的操作记录创建图文并茂的操作文档</li>
+            <li><strong>AI 辅助分析</strong>：使用 AI 自动生成操作描述（仅在您启用时）</li>
+            <li><strong>数据同步</strong>：在不同设备间同步您的操作记录（需要后端服务支持）</li>
+            <li><strong>功能改进</strong>：优化扩展性能和用户体验</li>
+        </ul>
+
+        <h2>4. 信息存储位置</h2>
+        <h3>4.1 本地存储</h3>
+        <p>大部分数据存储在您的浏览器本地存储中，包括：</p>
+        <ul>
+            <li>Chrome Storage API：存储操作记录、设置、token 等</li>
+            <li>这些数据仅保存在您的设备上，不会自动上传到我们的服务器</li>
+        </ul>
+
+        <h3>4.2 云端存储</h3>
+        <p>当您选择保存或同步数据时，以下数据可能被上传到云端：</p>
+        <ul>
+            <li><strong>截图文件</strong>：上传到对象存储服务（OSS）</li>
+            <li><strong>操作流程</strong>：保存到后端服务器（需要登录）</li>
+            <li><strong>AI 分析请求</strong>：发送到您配置的 AI 服务接口</li>
+        </ul>
+
+        <h2>5. 数据安全措施</h2>
+        <p>我们采取以下措施保护您的数据安全：</p>
+        <ul>
+            <li><strong>密码脱敏</strong>：自动识别并脱敏密码字段的输入</li>
+            <li><strong>本地优先</strong>：默认将数据存储在本地，减少云端传输</li>
+            <li><strong>HTTPS 加密</strong>：所有网络通信均使用 HTTPS 加密</li>
+            <li><strong>权限最小化</strong>：仅请求必要的浏览器权限</li>
+            <li><strong>用户控制</strong>：您可以随时删除本地存储的数据</li>
+        </ul>
+
+        <h2>6. 第三方服务</h2>
+        <p>本扩展可能使用以下第三方服务：</p>
+        <ul>
+            <li><strong>对象存储服务（OSS）</strong>：用于存储截图文件</li>
+            <li><strong>AI 服务接口</strong>：用于图片分析（可选，由用户配置）</li>
+            <li><strong>语音识别服务</strong>：用于语音转文字（可选）</li>
+        </ul>
+        <p>请注意，这些第三方服务有其独立的隐私策略。使用这些服务即表示您同意其隐私策略条款。</p>
+
+        <h2>7. 您的权利</h2>
+        <p>您对自己的数据拥有以下权利：</p>
+        <ul>
+            <li><strong>访问权</strong>：您可以查看本地存储的所有数据</li>
+            <li><strong>删除权</strong>：您可以随时删除本地存储的操作记录和设置</li>
+            <li><strong>导出权</strong>：您可以将操作记录导出为 PDF 或其他格式</li>
+            <li><strong>控制权</strong>：您可以启用或禁用 AI 分析、语音识别等功能</li>
+            <li><strong>撤销同意</strong>：您可以随时卸载本扩展以停止所有数据收集</li>
+        </ul>
+
+        <h2>8. 数据保留</h2>
+        <ul>
+            <li><strong>本地数据</strong>：将一直保存在您的浏览器中，直到您手动删除或卸载扩展</li>
+            <li><strong>云端数据</strong>：根据后端服务的保留政策，通常保留到您主动删除</li>
+            <li><strong>AI 请求数据</strong>：AI 服务提供商可能有各自的数据保留政策</li>
+        </ul>
+
+        <h2>9. 儿童隐私</h2>
+        <p>本扩展不针对 13 岁以下儿童设计。如果我们发现无意中收集了儿童的个人信息，将立即删除该信息。</p>
+
+        <h2>10. 隐私策略的变更</h2>
+        <p>我们可能会不时更新本隐私策略。重大变更将通过扩展更新通知您。建议您定期查看本页面以了解最新信息。</p>
+
+        <h2>10. 其他重要说明</h2>
+        <div class="highlight">
+            <p><strong>重要提醒：</strong></p>
+            <ul>
+                <li>请勿在敏感页面（如银行、支付页面）使用本扩展的录制功能</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
